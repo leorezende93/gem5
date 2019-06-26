@@ -1,0 +1,18 @@
+
+Import('*')
+
+SimObject('CombBase.py')
+Source('CombBase.cc')
+DebugFlag('CombBase', "For the base class for combinational blocks")
+
+SimObject('CombMult.py')
+Source('CombMult.cc')
+DebugFlag('CombMult', "Comb multiplier")
+
+SimObject('CombRead.py')
+Source('CombRead.cc')
+DebugFlag('CombRead', "To read from comb blocks")
+
+SimObject('CombWrite.py')
+Source('CombWrite.cc')
+DebugFlag('CombWrite', "To write to comb blocks")
