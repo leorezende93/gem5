@@ -54,6 +54,7 @@ void CombBase::tryScheduleNext() {
    
    for (int i = 0; i < _slave.size(); ++i) {
 	   if (schedule_flag && !_combEvent.scheduled()) {
+		  DPRINTF(CombBase, "Slave %s schduling task\n",_slave[i].name());
 		  if ((_data[&_slave[i]].begin()->first + _latency[0]) <= curTick()) {
 			schedule(_combEvent, curTick());
 		  } else {
@@ -64,6 +65,7 @@ void CombBase::tryScheduleNext() {
 }
 
 void CombBase::newData(CombSlavePort * slave, CombBaseData data) {
+    DPRINTF(CombBase, "Slave %s reading the data %d\n",slave->name(),data);
     for (int i = 0; i < _slave.size(); ++i) {
         if(slave == &_slave[i]) {
             _lastData[slave] = data;
@@ -86,6 +88,33 @@ void CombBase::newData(CombSlavePort * slave, CombBaseData data) {
 void CombBase::combEvent() {
 	writeData();
 	tryScheduleNext();
+}
+
+bool CombBase::hasData(CombSlavePort * slave) {
+	DPRINTF(CombBase, "Slave %s verifying if it has some data\n",slave->name());
+	if (_data[slave].size() > 0)
+		return true;
+	else
+		return false;
+}
+
+CombBaseData CombBase::getData(CombSlavePort * slave) {
+	DPRINTF(CombBase, "Slave %s getting data\n",slave->name());
+	return _data[slave].begin()->second;
+}
+
+void CombBase::popData(CombSlavePort * slave) {
+	DPRINTF(CombBase, "Slave %s erasing data\n",slave->name());
+	_data[slave].erase(_data[slave].begin());
+}
+
+bool CombBase::hasSlave(CombSlavePort * slave) {
+	DPRINTF(CombBase, "verifying if the slave list has the slave %s\n",slave->name());
+	for (int i = 0;  i< _slave.size(); i++) {
+		if ( &_slave[i] == slave)
+			return true;
+	}
+	return false;
 }
 
 void CombSlavePort::newData(CombBaseData data) {

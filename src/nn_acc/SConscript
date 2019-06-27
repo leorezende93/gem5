@@ -5,9 +5,17 @@ SimObject('CombBase.py')
 Source('CombBase.cc')
 DebugFlag('CombBase', "For the base class for combinational blocks")
 
+SimObject('SeqBase.py')
+Source('SeqBase.cc')
+DebugFlag('SeqBase', "For the base class for sequential blocks")
+
 SimObject('CombMult.py')
 Source('CombMult.cc')
 DebugFlag('CombMult', "Comb multiplier")
+
+SimObject('SeqMult.py')
+Source('SeqMult.cc')
+DebugFlag('SeqMult', "Seq multiplier")
 
 SimObject('CombRead.py')
 Source('CombRead.cc')

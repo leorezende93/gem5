@@ -28,7 +28,7 @@ CombWrite* CombWriteParams::create() {
 void CombWrite::writeData(){
 	n_of_iterations--;
 
-	DPRINTF(CombWrite, "Writing %d\n", _writeDataVector[n_of_iterations]);
+	DPRINTF(CombWrite, "Master %s writing %d\n", _master[0].name(), _writeDataVector[n_of_iterations]);
 	_master[0].newData(_writeDataVector[n_of_iterations]);
 
 	if(n_of_iterations > 0) {

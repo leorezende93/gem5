@@ -19,9 +19,9 @@ CombRead* CombReadParams::create() {
 
 void CombRead::writeData(){
 	for (int i = 0; i < _slave.size(); i++) {
-		if(_data[&_slave[i]].size() > 0) {
-			DPRINTF(CombRead, "Reading %d\n", _data[&_slave[i]].begin()->second);
-			_data[&_slave[i]].erase(_data[&_slave[i]].begin());
+		if(hasData(&_slave[i])) {
+			DPRINTF(CombRead, "Reading %d from slave %s\n", getData(&_slave[i]),_slave[i].name());
+			popData(&_slave[i]);
 		}
 	}
 }

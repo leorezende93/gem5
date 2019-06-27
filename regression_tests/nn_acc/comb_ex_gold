@@ -1,0 +1,21 @@
+Global frequency set at 1000000000000 ticks per second
+Beginning simulation!
+      0: write1: Master write1.master[0] writing 30
+      0: mult: Slave mult.slave[1] reading the data 30
+      0: mult: Slave mult.slave[0] schduling task
+      0: write0: Master write0.master[0] writing 15
+      0: mult: Slave mult.slave[0] reading the data 15
+2000000: mult: Slave mult.slave[0] verifying if it has some data
+2000000: mult: Slave mult.slave[0] getting data
+2000000: mult: Slave mult.slave[0] erasing data
+2000000: mult: Slave mult.slave[1] verifying if it has some data
+2000000: mult: Slave mult.slave[1] getting data
+2000000: mult: Slave mult.slave[1] erasing data
+2000000: mult: Master mult.master[0] writing the multplier result 450
+2000000: read: Slave read.slave[0] reading the data 450
+2000000: read: Slave read.slave[0] schduling task
+2100000: read: Slave read.slave[0] verifying if it has some data
+2100000: read: Slave read.slave[0] getting data
+2100000: read: Reading 450 from slave read.slave[0]
+2100000: read: Slave read.slave[0] erasing data
+Exiting @ tick 18446744073709551615 because simulate() limit reached

@@ -13,13 +13,13 @@ CombMult::~CombMult() {
 void CombMult::writeData() {
 	CombBaseData result = 1;
     for (int i = 0; i < _slave.size(); i++) {
-        if (_data[&_slave[i]].size() > 0) {
-			result = result * _data[&_slave[i]].begin()->second;
-			_data[&_slave[i]].erase(_data[&_slave[i]].begin());
+        if (hasData(&_slave[i])) {
+			result = result * getData(&_slave[i]);
+			popData(&_slave[i]);
 		}
     }
     
-    DPRINTF(CombMult, "Multiplying %d\n", result);
+    DPRINTF(CombMult, "Master %s writing the multplier result %d\n", _master[0].name(), result);
     _master[0].newData(result);
 }
 

@@ -7,13 +7,27 @@
 class CombMult : public CombBase
 {
   private:
+  
+	 /** 
+     * Purelly virtual method coming from the base class.
+     * This method perform the multiplier operation.
+     */
 	void writeData();
   
-	std::map<CombSlavePort*, CombBaseData> _lastData;
-  
   public:
+     /** 
+     * Constructor.
+     */
     CombMult(CombMultParams *params);
+    
+     /** 
+     * Destructor.
+     */
     ~CombMult();
+    
+     /** 
+     * Method needed by gem5 to start the simulation.
+     */
     void startup();
 };
 

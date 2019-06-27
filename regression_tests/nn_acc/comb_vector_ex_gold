@@ -1,0 +1,183 @@
+Global frequency set at 1000000000000 ticks per second
+Beginning simulation!
+      0: write1: Master write1.master[0] writing 10
+      0: mult: Slave mult.slave[1] reading the data 10
+      0: mult: Slave mult.slave[0] schduling task
+      0: write0: Master write0.master[0] writing 10
+      0: mult: Slave mult.slave[0] reading the data 10
+ 100000: write0: Master write0.master[0] writing 90
+ 100000: mult: Slave mult.slave[0] reading the data 90
+ 100000: write1: Master write1.master[0] writing 9
+ 100000: mult: Slave mult.slave[1] reading the data 9
+ 200000: write1: Master write1.master[0] writing 8
+ 200000: mult: Slave mult.slave[1] reading the data 8
+ 200000: write0: Master write0.master[0] writing 80
+ 200000: mult: Slave mult.slave[0] reading the data 80
+ 300000: write0: Master write0.master[0] writing 70
+ 300000: mult: Slave mult.slave[0] reading the data 70
+ 300000: write1: Master write1.master[0] writing 7
+ 300000: mult: Slave mult.slave[1] reading the data 7
+ 400000: write1: Master write1.master[0] writing 6
+ 400000: mult: Slave mult.slave[1] reading the data 6
+ 400000: write0: Master write0.master[0] writing 60
+ 400000: mult: Slave mult.slave[0] reading the data 60
+ 500000: write0: Master write0.master[0] writing 50
+ 500000: mult: Slave mult.slave[0] reading the data 50
+ 500000: write1: Master write1.master[0] writing 5
+ 500000: mult: Slave mult.slave[1] reading the data 5
+ 600000: write1: Master write1.master[0] writing 4
+ 600000: mult: Slave mult.slave[1] reading the data 4
+ 600000: write0: Master write0.master[0] writing 40
+ 600000: mult: Slave mult.slave[0] reading the data 40
+ 700000: write0: Master write0.master[0] writing 30
+ 700000: mult: Slave mult.slave[0] reading the data 30
+ 700000: write1: Master write1.master[0] writing 3
+ 700000: mult: Slave mult.slave[1] reading the data 3
+ 800000: write1: Master write1.master[0] writing 2
+ 800000: mult: Slave mult.slave[1] reading the data 2
+ 800000: write0: Master write0.master[0] writing 20
+ 800000: mult: Slave mult.slave[0] reading the data 20
+ 900000: write0: Master write0.master[0] writing 10
+ 900000: mult: Slave mult.slave[0] reading the data 10
+ 900000: write1: Master write1.master[0] writing 1
+ 900000: mult: Slave mult.slave[1] reading the data 1
+2000000: mult: Slave mult.slave[0] verifying if it has some data
+2000000: mult: Slave mult.slave[0] getting data
+2000000: mult: Slave mult.slave[0] erasing data
+2000000: mult: Slave mult.slave[1] verifying if it has some data
+2000000: mult: Slave mult.slave[1] getting data
+2000000: mult: Slave mult.slave[1] erasing data
+2000000: mult: Master mult.master[0] writing the multplier result 100
+2000000: read: Slave read.slave[0] reading the data 100
+2000000: read: Slave read.slave[0] schduling task
+2000000: mult: Slave mult.slave[0] schduling task
+2000000: read: Slave read.slave[0] verifying if it has some data
+2000000: read: Slave read.slave[0] getting data
+2000000: read: Reading 100 from slave read.slave[0]
+2000000: read: Slave read.slave[0] erasing data
+2100000: mult: Slave mult.slave[0] verifying if it has some data
+2100000: mult: Slave mult.slave[0] getting data
+2100000: mult: Slave mult.slave[0] erasing data
+2100000: mult: Slave mult.slave[1] verifying if it has some data
+2100000: mult: Slave mult.slave[1] getting data
+2100000: mult: Slave mult.slave[1] erasing data
+2100000: mult: Master mult.master[0] writing the multplier result 810
+2100000: read: Slave read.slave[0] reading the data 810
+2100000: read: Slave read.slave[0] schduling task
+2100000: mult: Slave mult.slave[0] schduling task
+2100000: read: Slave read.slave[0] verifying if it has some data
+2100000: read: Slave read.slave[0] getting data
+2100000: read: Reading 810 from slave read.slave[0]
+2100000: read: Slave read.slave[0] erasing data
+2200000: mult: Slave mult.slave[0] verifying if it has some data
+2200000: mult: Slave mult.slave[0] getting data
+2200000: mult: Slave mult.slave[0] erasing data
+2200000: mult: Slave mult.slave[1] verifying if it has some data
+2200000: mult: Slave mult.slave[1] getting data
+2200000: mult: Slave mult.slave[1] erasing data
+2200000: mult: Master mult.master[0] writing the multplier result 640
+2200000: read: Slave read.slave[0] reading the data 640
+2200000: read: Slave read.slave[0] schduling task
+2200000: mult: Slave mult.slave[0] schduling task
+2200000: read: Slave read.slave[0] verifying if it has some data
+2200000: read: Slave read.slave[0] getting data
+2200000: read: Reading 640 from slave read.slave[0]
+2200000: read: Slave read.slave[0] erasing data
+2300000: mult: Slave mult.slave[0] verifying if it has some data
+2300000: mult: Slave mult.slave[0] getting data
+2300000: mult: Slave mult.slave[0] erasing data
+2300000: mult: Slave mult.slave[1] verifying if it has some data
+2300000: mult: Slave mult.slave[1] getting data
+2300000: mult: Slave mult.slave[1] erasing data
+2300000: mult: Master mult.master[0] writing the multplier result 490
+2300000: read: Slave read.slave[0] reading the data 490
+2300000: read: Slave read.slave[0] schduling task
+2300000: mult: Slave mult.slave[0] schduling task
+2300000: read: Slave read.slave[0] verifying if it has some data
+2300000: read: Slave read.slave[0] getting data
+2300000: read: Reading 490 from slave read.slave[0]
+2300000: read: Slave read.slave[0] erasing data
+2400000: mult: Slave mult.slave[0] verifying if it has some data
+2400000: mult: Slave mult.slave[0] getting data
+2400000: mult: Slave mult.slave[0] erasing data
+2400000: mult: Slave mult.slave[1] verifying if it has some data
+2400000: mult: Slave mult.slave[1] getting data
+2400000: mult: Slave mult.slave[1] erasing data
+2400000: mult: Master mult.master[0] writing the multplier result 360
+2400000: read: Slave read.slave[0] reading the data 360
+2400000: read: Slave read.slave[0] schduling task
+2400000: mult: Slave mult.slave[0] schduling task
+2400000: read: Slave read.slave[0] verifying if it has some data
+2400000: read: Slave read.slave[0] getting data
+2400000: read: Reading 360 from slave read.slave[0]
+2400000: read: Slave read.slave[0] erasing data
+2500000: mult: Slave mult.slave[0] verifying if it has some data
+2500000: mult: Slave mult.slave[0] getting data
+2500000: mult: Slave mult.slave[0] erasing data
+2500000: mult: Slave mult.slave[1] verifying if it has some data
+2500000: mult: Slave mult.slave[1] getting data
+2500000: mult: Slave mult.slave[1] erasing data
+2500000: mult: Master mult.master[0] writing the multplier result 250
+2500000: read: Slave read.slave[0] reading the data 250
+2500000: read: Slave read.slave[0] schduling task
+2500000: mult: Slave mult.slave[0] schduling task
+2500000: read: Slave read.slave[0] verifying if it has some data
+2500000: read: Slave read.slave[0] getting data
+2500000: read: Reading 250 from slave read.slave[0]
+2500000: read: Slave read.slave[0] erasing data
+2600000: mult: Slave mult.slave[0] verifying if it has some data
+2600000: mult: Slave mult.slave[0] getting data
+2600000: mult: Slave mult.slave[0] erasing data
+2600000: mult: Slave mult.slave[1] verifying if it has some data
+2600000: mult: Slave mult.slave[1] getting data
+2600000: mult: Slave mult.slave[1] erasing data
+2600000: mult: Master mult.master[0] writing the multplier result 160
+2600000: read: Slave read.slave[0] reading the data 160
+2600000: read: Slave read.slave[0] schduling task
+2600000: mult: Slave mult.slave[0] schduling task
+2600000: read: Slave read.slave[0] verifying if it has some data
+2600000: read: Slave read.slave[0] getting data
+2600000: read: Reading 160 from slave read.slave[0]
+2600000: read: Slave read.slave[0] erasing data
+2700000: mult: Slave mult.slave[0] verifying if it has some data
+2700000: mult: Slave mult.slave[0] getting data
+2700000: mult: Slave mult.slave[0] erasing data
+2700000: mult: Slave mult.slave[1] verifying if it has some data
+2700000: mult: Slave mult.slave[1] getting data
+2700000: mult: Slave mult.slave[1] erasing data
+2700000: mult: Master mult.master[0] writing the multplier result 90
+2700000: read: Slave read.slave[0] reading the data 90
+2700000: read: Slave read.slave[0] schduling task
+2700000: mult: Slave mult.slave[0] schduling task
+2700000: read: Slave read.slave[0] verifying if it has some data
+2700000: read: Slave read.slave[0] getting data
+2700000: read: Reading 90 from slave read.slave[0]
+2700000: read: Slave read.slave[0] erasing data
+2800000: mult: Slave mult.slave[0] verifying if it has some data
+2800000: mult: Slave mult.slave[0] getting data
+2800000: mult: Slave mult.slave[0] erasing data
+2800000: mult: Slave mult.slave[1] verifying if it has some data
+2800000: mult: Slave mult.slave[1] getting data
+2800000: mult: Slave mult.slave[1] erasing data
+2800000: mult: Master mult.master[0] writing the multplier result 40
+2800000: read: Slave read.slave[0] reading the data 40
+2800000: read: Slave read.slave[0] schduling task
+2800000: mult: Slave mult.slave[0] schduling task
+2800000: read: Slave read.slave[0] verifying if it has some data
+2800000: read: Slave read.slave[0] getting data
+2800000: read: Reading 40 from slave read.slave[0]
+2800000: read: Slave read.slave[0] erasing data
+2900000: mult: Slave mult.slave[0] verifying if it has some data
+2900000: mult: Slave mult.slave[0] getting data
+2900000: mult: Slave mult.slave[0] erasing data
+2900000: mult: Slave mult.slave[1] verifying if it has some data
+2900000: mult: Slave mult.slave[1] getting data
+2900000: mult: Slave mult.slave[1] erasing data
+2900000: mult: Master mult.master[0] writing the multplier result 10
+2900000: read: Slave read.slave[0] reading the data 10
+2900000: read: Slave read.slave[0] schduling task
+2900000: read: Slave read.slave[0] verifying if it has some data
+2900000: read: Slave read.slave[0] getting data
+2900000: read: Reading 10 from slave read.slave[0]
+2900000: read: Slave read.slave[0] erasing data
+Exiting @ tick 18446744073709551615 because simulate() limit reached

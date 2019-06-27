@@ -7,11 +7,26 @@
 class CombRead : public CombBase
 {
   private:
+	/** 
+    * Purelly virtual method coming from the base class.
+    * This method print the value coming from a master port.
+    */
     void writeData();
   
   public:
+     /** 
+     * Constructor.
+     */
     CombRead(CombReadParams *params);
+    
+     /** 
+     * Destructor.
+     */
     ~CombRead();
+    
+     /** 
+     * Method needed by gem5 to start the simulation.
+     */
     void startup();
 };
 
