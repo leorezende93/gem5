@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2015 Jason Power
+# Copyright (c) 2017 Jason Lowe-Power
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -25,21 +25,16 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Authors: Jason Power
+# Authors: Jason Lowe-Power
 
 """ This file creates a barebones system and executes 'hello', a simple Hello
-World application.
-See Part 1, Chapter 2: Creating a simple configuration script in the
-learning_gem5 book for more information about this script.
+World application. Adds a simple cache between the CPU and the membus.
 
-IMPORTANT: If you modify this file, it's likely that the Learning gem5 book
-           also needs to be updated. For now, email Jason <power.jg@gmail.com>
-
+This config file assumes that the x86 ISA was built.
 """
 
 from __future__ import print_function
 from __future__ import absolute_import
-
 
 # import the m5 (gem5) library created when gem5 is built
 import m5
@@ -55,18 +50,26 @@ system.clk_domain.clock = '1GHz'
 system.clk_domain.voltage_domain = VoltageDomain()
 
 # Set up the system
-system.mem_mode = 'atomic'               # Use timing accesses
+system.mem_mode = 'timing'               # Use timing accesses
 system.mem_ranges = [AddrRange('512MB')] # Create an address range
 
 # Create a simple CPU
-system.cpu = AtomicSimpleCPU()
+system.cpu = TimingSimpleCPU()
 
-# Create a memory bus, a system crossbar, in this case
+# Create a memory bus, a coherent crossbar, in this case
 system.membus = SystemXBar()
 
-# Hook the CPU ports up to the membus
-system.cpu.icache_port = system.membus.slave
-system.cpu.dcache_port = system.membus.slave
+# Create a simple cache
+system.cache = SimpleCache(size='1kB')
+
+# Connect the I and D cache ports of the CPU to the memobj.
+# Since cpu_side is a vector port, each time one of these is connected, it will
+# create a new instance of the CPUSidePort class
+system.cpu.icache_port = system.cache.cpu_side
+system.cpu.dcache_port = system.cache.cpu_side
+
+# Hook the cache up to the memory bus
+system.cache.mem_side = system.membus.slave
 
 # create the interrupt controller for the CPU and connect to the membus
 system.cpu.createInterruptController()
@@ -79,20 +82,18 @@ system.mem_ctrl.port = system.membus.master
 # Connect the system up to the membus
 system.system_port = system.membus.slave
 
-# get ISA for the binary to run.
-isa = str(m5.defines.buildEnv['TARGET_ISA']).lower()
+# Create a process for a simple "Hello World" application
+process = Process()
 
-# Default to running 'hello', use the compiled ISA to find the binary
+# Set the command
 # grab the specific path to the binary
 thispath = os.path.dirname(os.path.realpath(__file__))
 app = 'hello'
-binary = os.path.join(thispath,'app/',str(app) + '/' + str(app))
+binpath = os.path.join(thispath,'app/',str(app) + '/' + str(app))
 
-# Create a process for a simple "Hello World" application
-process = Process()
-# Set the command
 # cmd is a list which begins with the executable (like argv)
-process.cmd = [binary]
+process.cmd = [binpath]
+
 # Set the cpu to use the process as its workload and create thread contexts
 system.cpu.workload = process
 system.cpu.createThreads()
@@ -103,6 +104,5 @@ root = Root(full_system = False, system = system)
 m5.instantiate()
 
 print("Beginning simulation!")
-print('Simulation ISA %s' % isa)
 exit_event = m5.simulate()
 print('Exiting @ tick %i because %s' % (m5.curTick(), exit_event.getCause()))
