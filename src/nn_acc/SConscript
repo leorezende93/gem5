@@ -24,3 +24,16 @@ DebugFlag('CombRead', "To read from comb blocks")
 SimObject('CombWrite.py')
 Source('CombWrite.cc')
 DebugFlag('CombWrite', "To write to comb blocks")
+
+SimObject('CombAdd.py')
+Source('CombAdd.cc')
+DebugFlag('CombAdd', "Comb multiplier")
+
+SimObject('SeqAdd.py')
+Source('SeqAdd.cc')
+DebugFlag('SeqAdd', "Seq multiplier")
+
+SimObject('SeqReg.py')
+Source('SeqReg.cc')
+DebugFlag('SeqReg', "Seq register")
+

@@ -19,6 +19,7 @@ CombBase::CombBase(CombBaseParams *params) :
     for (int i = 0; i < _slave.size(); i++) {
 		_lastData[&_slave[i]] = 0;
 	}
+	
 }
 
 CombBase::~CombBase() {
@@ -131,6 +132,7 @@ void CombSlavePort::slaveBind(CombMasterPort& master) {
     _master = &master;
     _baseMasterPort = &master;
     _connected = true;
+    DPRINTF(CombBase,"Master %s binding slave\n",master.name());
 }
 
 void CombSlavePort::bind(Port &peer) {
@@ -145,6 +147,7 @@ void CombMasterPort::newData(CombBaseData data) {
 
 void CombMasterPort::bind(Port &peerPort) {
     auto *slave = dynamic_cast<CombSlavePort *>(&peerPort);
+    DPRINTF(CombBase,"Binding port %s and port %s\n",name(), peerPort.name());
     if (!slave) {
         panic("Attempt to bind port %s to non-slave port %s.",name(), peerPort.name());
     }

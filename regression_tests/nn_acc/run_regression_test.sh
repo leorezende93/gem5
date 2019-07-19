@@ -60,5 +60,8 @@ else
     echo "Test seq_tree_ex pass!"
 fi
 
+rm -rf regression_tests/nn_acc/*_log
+
 cd -
+
 

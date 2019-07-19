@@ -1,4 +1,18 @@
 Global frequency set at 1000000000000 ticks per second
+      0: mult1.master[0]: Binding port mult1.master[0] and port mult3.slave[0]
+      0: mult3.slave[0]: Master mult1.master[0] binding slave
+      0: mult2.master[0]: Binding port mult2.master[0] and port mult3.slave[1]
+      0: mult3.slave[1]: Master mult2.master[0] binding slave
+      0: mult3.master[0]: Binding port mult3.master[0] and port read.slave[0]
+      0: read.slave[0]: Master mult3.master[0] binding slave
+      0: write0.master[0]: Binding port write0.master[0] and port mult1.slave[0]
+      0: mult1.slave[0]: Master write0.master[0] binding slave
+      0: write1.master[0]: Binding port write1.master[0] and port mult1.slave[1]
+      0: mult1.slave[1]: Master write1.master[0] binding slave
+      0: write2.master[0]: Binding port write2.master[0] and port mult2.slave[0]
+      0: mult2.slave[0]: Master write2.master[0] binding slave
+      0: write3.master[0]: Binding port write3.master[0] and port mult2.slave[1]
+      0: mult2.slave[1]: Master write3.master[0] binding slave
 Beginning simulation!
       0: write3: Master write3.master[0] writing 1
       0: mult2: Slave mult2.slave[1] reading the data 1
@@ -105,7 +119,7 @@ Beginning simulation!
     400: mult1: Slave mult1.slave[1] erasing data
     400: mult1: Master mult1.master[0] writing the multplier result 450
     400: mult3: Slave mult3.slave[0] reading the data 450
-   1000: mult3: Master mult3.master[0] writing the multplier result 225000
+   1000: mult3: Master mult3.master[0] writing the sequential multplier result 225000
    1000: read: Slave read.slave[0] reading the data 225000
    1000: read: Slave read.slave[0] schduling task
    1000: read: Slave read.slave[0] verifying if it has some data

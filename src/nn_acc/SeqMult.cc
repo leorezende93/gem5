@@ -18,7 +18,7 @@ void SeqMult::writeData() {
 		}
     }
     
-    DPRINTF(SeqMult, "Master %s writing the multplier result %d\n", _master[0].name(), result);
+    DPRINTF(SeqMult, "Master %s writing the sequential multplier result %d\n", _master[0].name(), result);
     _master[0].newData(result);
 }
 

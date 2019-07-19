@@ -1,4 +1,10 @@
 Global frequency set at 1000000000000 ticks per second
+      0: mult.master[0]: Binding port mult.master[0] and port read.slave[0]
+      0: read.slave[0]: Master mult.master[0] binding slave
+      0: write0.master[0]: Binding port write0.master[0] and port mult.slave[0]
+      0: mult.slave[0]: Master write0.master[0] binding slave
+      0: write1.master[0]: Binding port write1.master[0] and port mult.slave[1]
+      0: mult.slave[1]: Master write1.master[0] binding slave
 Beginning simulation!
       0: write1: Master write1.master[0] writing 10
       0: mult: Slave mult.slave[1] reading the data 10

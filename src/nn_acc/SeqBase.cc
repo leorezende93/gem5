@@ -42,7 +42,7 @@ void SeqBase::seqEvent() {
 
 void SeqBase::writeData() {
 	for (int i = 0; i < _slave.size(); i++) {
-		DPRINTF(SeqBase, "Slave %s wrinting data\n",_slave[i].name()); 
+		DPRINTF(SeqBase, "Slave %s wrinting data %d in master %s\n",_slave[i].name(),_lastData[&_slave[i]],_master[0].name()); 
 		_master[0].newData(_lastData[&_slave[i]]);	
 	}	    
 }
